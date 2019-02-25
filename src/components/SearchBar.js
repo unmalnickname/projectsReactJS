@@ -4,11 +4,11 @@ import React from "react";
 class SearchBar extends React.Component {
   state = { term: "Hi there!" };
 
-  onFormSummit(event) {
+  onFormSummit = (event) => {
     event.preventDefault();
 
     console.log(this.state.term);
-  }
+  };
 
   render() {
     return (
