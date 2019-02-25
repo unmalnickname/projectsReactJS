@@ -5,14 +5,17 @@ import SearchBar from "./SearchBar.js";
 //
 
 class App extends React.Component {
-  onSearchSubmit(term) {
-    console.log(2);
-    axios.get("url/search/photos", {
+  async onSearchSubmit(term) {
+    const response = await axios.get("https://api.unsplash.com/search/photos", {
       params: { query: term },
       headers: {
-        Authorization: "Client-ID ID_number"
+        Authorization:
+          "Client-ID 5148fb123f6a856dd883151d44338f516c64b51f951bfa02d5c1b2a25a2fc595"
       }
     });
+    // .then((response) => {
+    console.log(response.data.results);
+    // });
   }
 
   render() {
