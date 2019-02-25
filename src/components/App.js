@@ -1,12 +1,18 @@
 import React from "react";
+import axios from "axios";
 import SearchBar from "./SearchBar.js";
 
 //
 
 class App extends React.Component {
   onSearchSubmit(term) {
-    console.log(term);
     console.log(2);
+    axios.get("url/search/photos", {
+      params: { query: term },
+      headers: {
+        Authorization: "Client-ID ID_number"
+      }
+    });
   }
 
   render() {
